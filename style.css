@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  transition: background 0.5s ease-in-out, color 0.3s;
+  background: url('bg1.jpg') no-repeat center center/cover;
+  color: black;
+}
+
+/* 🟢 Dark Mode */
+body.dark-mode {
+  background: #121212 !important;
+  color: white;
+}
+
+#settings-btn, #theme-toggle {
+  position: absolute;
+  top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#settings-btn { left: 10px; }
+#theme-toggle { right: 10px; }
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.buttons button, .music-buttons button {
+  padding: 10px 15px;
+  margin: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#start-btn { background: green; color: white; }
+#pause-btn { background: orange; color: white; }
+#reset-btn { background: red; color: white; }
+
+#music1-btn { background: blue; color: white; }
+#music2-btn { background: purple; color: white; }
+#music3-btn { background: pink; color: white; }
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#close-settings {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}

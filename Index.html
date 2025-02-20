@@ -3,18 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timer App</title>
+    <title>Pomodoro Timer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Timer</h1>
-        <p id="timer-display">00:00:00</p>
-        <div class="buttons">
-            <button id="start-btn">Start</button>
-            <button id="pause-btn">Pauze</button>
-            <button id="reset-btn">Reset</button>
+    <button id="settings-btn">⚙️ Settings</button>
+    <button id="theme-toggle">🌙</button>
+
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-settings">&times;</span>
+            <h2>Instellingen</h2>
+            <label for="time-input">Tijd (minuten):</label>
+            <input type="number" id="time-input" min="1" value="25">
+            
+            <label for="background-select">Achtergrond:</label>
+            <select id="background-select">
+                <option value="bg1.jpg">Achtergrond 1</option>
+                <option value="bg2.jpg">Achtergrond 2</option>
+                <option value="bg3.jpg">Achtergrond 3</option>
+            </select>
+
+            <button id="save-settings">Opslaan</button>
         </div>
     </div>
+
+    <div class="timer-container">
+        <h1>Pomodoro Timer</h1>
+        <div class="circle">
+            <p id="timer-display">25:00</p>
+        </div>
+        <div class="buttons">
+            <button id="start-btn">Start</button>
+            <button id="pause-btn">Pause</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+        <div class="music-buttons">
+            <button id="music1-btn">Muziek 1</button>
+            <button id="music2-btn">Muziek 2</button>
+            <button id="music3-btn">Muziek 3</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
