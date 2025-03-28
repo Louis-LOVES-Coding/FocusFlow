@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - FocusFlow</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Settings</h1>
+    </header>
+
+    <main>
+        <div class="settings-container">
+            <form method="POST">
+               
+                <div class="form-group">
+                    <label for="session_length">Session Length (minutes):</label>
+                    <input type="number" id="session_length" name="session_length" value="{{ session.get('session_length', config['default_session_length']) }}">
+                </div>
+
+             
+                <div class="form-group">
+                    <label for="break_length">Break Length (minutes):</label>
+                    <input type="number" id="break_length" name="break_length" value="{{ session.get('break_length', config['default_break_length']) }}">
+                </div>
+
+              
+                <div class="form-group">
+                    <label for="music">Music:</label>
+                    <select id="music" name="music" class="custom-dropdown">
+                        <option value="lofi.mp3" {% if session.get('music') == 'lofi.mp3' %}selected{% endif %}>Lofi</option>
+                        <option value="white_noise.mp3" {% if session.get('music') == 'white_noise.mp3' %}selected{% endif %}>White Noise</option>
+                        <option value="rain.mp3" {% if session.get('music') == 'rain.mp3' %}selected{% endif %}>Rain</option>
+                        <option value="brown_noise.mp3" {% if session.get('music') == 'brown_noise.mp3' %}selected{% endif %}>Brown Noise</option>
+                    </select>
+                </div>
+
+             
+                <div class="form-group">
+                    <label for="background">Background Image:</label>
+                    <select id="background" name="background" class="custom-dropdown">
+                        <option value="forest.jpg" {% if session.get('background') == 'forest.jpg' %}selected{% endif %}>Forest</option>
+                        <option value="mountain.jpg" {% if session.get('background') == 'mountain.jpg' %}selected{% endif %}>Mountain</option>
+                        <option value="space.jpg" {% if session.get('background') == 'space.jpg' %}selected{% endif %}>Space</option>
+                    </select>
+                </div>
+
+              
+                <div class="form-group">
+                    <label for="timer_color">Timer Color:</label>
+                    <input type="color" id="timer_color" name="timer_color" value="{{ session.get('timer_color', '#ffffff') }}">
+                </div>
+
+               
+                <div class="form-actions">
+                    <button type="submit" class="button save">Save Settings</button>
+                </div>
+            </form>
+
+          
+            <div class="back-link">
+                <a href="{{ url_for('home') }}">Back to Timer</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
