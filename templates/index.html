@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FocusFlow - Aesthetic Pomodoro Timer</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+          <!-- Add this to preconnect to Google's servers -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Include the Nanum Pen Script font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+        <script>
+            var timerDuration = {{ timer_length | tojson }} * 60;
+        </script>
+    </head>
+    
+<body class="light-mode">
+
+ 
+    
+
+    <div class="container">
+        <header>
+
+            <div class="container">
+            
+                <a href="https://www.tongerlo.nl/norbertus/" id="logo-link">
+                    <img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="FocusFlow Logo" class="logo">
+                </a>
+
+            <h1>
+                <div class="focusflow">FocusFlow</div>
+            </h1>
+        </header>
+        <main>
+            <div class="timer">
+                <div id="progress-bar" class="progress"></div>
+                <div id="time-display" style="color: {{ session.get('timer_color', '#ffffff') }}">25:00</div>
+                <div class="controls">
+                    <button id="start-button" class="button start">Start</button>
+                    <button id="pause-button" class="button pause">Pause</button>
+                    <button id="reset-button" class="button reset">Reset</button>
+                  
+
+                </div>
+            </div>
+
+            <audio id="audio-player" loop>
+                <source id="audio-source" src="{{ url_for('static', filename='assets/sounds/' + session.get('music', config['default_music'])) }}" type="audio/mp3">
+            </audio>
+            
+            <body class="light-mode" style="background-image: url('{{ url_for('static', filename='assets/images/' + background_image) }}'); background-size: cover; background-repeat: no-repeat;">
+
+                     
+            
+
+            <div class="music-control-container">
+                <button id="play-pause">
+                    <i id="play-icon" class="fas fa-play"></i>
+                    <i id="pause-icon" class="fas fa-pause" style="display:none;"></i>
+                </button>
+                <span id="music-indicator">🎵 Music off</span>
+            </div>
+
+           
+        <!-- Dark Mode Toggle Button -->
+        <div class="dark-mode-control-container" style="position: fixed; bottom: 10px; right: 10px;">
+            <button id="theme-button" class="dark-mode-toggle">
+                <i id="sun-icon" class="fas fa-sun"></i>
+                <i id="moon-icon" class="fas fa-moon" style="display:none;"></i>
+            </button>
+        <span id="dark-mode-indicator">🌙 Dark Mode Off</span>
+        </div>
+
+
+            
+            
+            
+            <div class="settings">
+                <a href="{{ url_for('settings') }}">Settings</a>
+            </div>
+
+           
+        </main>
+
+        <footer>
+            <p>&copy; 2025 FocusFlow. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+</body>
+</html>

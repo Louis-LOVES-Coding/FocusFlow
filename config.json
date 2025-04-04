@@ -1,0 +1,24 @@
+{
+  "default_session_length": 25,
+  "default_break_length": 5,
+  "default_background": "forest.jpg",
+  "default_music": "lofi.mp3",
+  "background_options": [
+    "forest.jpg",
+    "mountain.jpg",
+    "space.jpg"
+  ],
+  "music_options": [
+    "rain.mp3",
+    "lofi.mp3",
+    "white_noise.mp3",
+    "silence.mp3"
+  ],
+  "user_preferences": {
+    "session_length": 25,
+    "short_break_length": 5,
+    "long_break_length": 15,
+    "background": "solid_color",
+    "music": "silence.mp3"
+  }
+}
