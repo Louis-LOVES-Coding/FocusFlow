@@ -41,7 +41,7 @@ Volg deze stappen om het project lokaal te draaien:
 2. **Timer pauzeren**: Klik op de pauzeknop om de timer te pauzeren.
 3. **Timer resetten**: Klik op de resetknop om de timer terug te zetten naar de beginstand.
 4. **Instellingen aanpassen**: Klik op het instellingen-icoon rechts bovenin om de instellingenpagina te openen, waar je de thema-instellingen kunt wijzigen.
-5. **Donkere modus**: Je kunt de donkere modus in- of uitschakelen via de knop onderaan rechts op het scherm.
+5. **Donkere modus**: Je kunt de donkere modus in- of uitschakelen via de knop onderaan rechts op het scherm. (werkt tijdelijk niet)
 
 ## Bestanden
 
@@ -49,20 +49,10 @@ Volg deze stappen om het project lokaal te draaien:
 - **style.css**: De CSS-bestanden voor de styling van de interface.
 - **script.js**: De JavaScript-code die de timer en interacties aanstuurt.
 
-## Contributie
-
-Bijdragen aan dit project zijn welkom! Volg de onderstaande stappen om bij te dragen:
-
-1. Fork dit repository.
-2. Maak een nieuwe branch (`git checkout -b feature/naam-van-feature`).
-3. Voeg je wijzigingen toe (`git add .`).
-4. Commit je wijzigingen (`git commit -m 'Voeg feature toe'`).
-5. Push naar de branch (`git push origin feature/naam-van-feature`).
-6. Open een pull request.
 
 ## Licentie
 
-Dit project is gelicentieerd onder de MIT-licentie - zie het [LICENSE-bestand](LICENSE) voor details.
+Dit project is gelicentieerd onder Norbertus Gertrudis Lyceum.
 
 ---
 
